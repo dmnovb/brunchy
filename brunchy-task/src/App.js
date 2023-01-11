@@ -6,11 +6,11 @@ import Order from './components/Order'
 
 function App() {
   return (
-    <div className='container'>
+    <div className='containerB'>
       <Header/>
       <Info/>
       <Items/>
-      <Order/>
+      {/* <Order/> */}
     </div>
   );
 }

@@ -6,17 +6,14 @@ import basket from '../assets/shopping-basket .png'
 import Order from './Order';
 
 const Items = () => {
-  console.log(data.items)
 
   const [cartItems, setCartItems] = useState([])
+  const [total, setTotal] = useState(0)
 
-  const handleItems = (id) => {
-    setCartItems([...cartItems, id])
-    // cartItems.push(id)
+  const handleItems = (item) => {
+    setCartItems([...cartItems, item])
+    setTotal(total + item.price)
   }
-
-  console.log(cartItems)
-  
 
   return (
     <div>
@@ -27,8 +24,8 @@ const Items = () => {
             gap: "5rem"
           }}>
             {data.items.map((item, idx) => (
-                  <li key={idx} className='items'> 
-                   {item.name} <br></br><span> {item.caption} </span> <br></br> <div>
+                  <li key={idx} className='itemsB'> 
+                  {item.name} <br></br><span> {item.caption} </span> <br></br> <div>
                   <span>$ </span>{item.price}
                   </div> 
                   {/* <img className='basket-image' src={basket}></img> */}
@@ -38,6 +35,7 @@ const Items = () => {
             
           </Splide>
         </ul>
+        <Order cartItems={cartItems} total={total}/>
     </div>
   )
 }

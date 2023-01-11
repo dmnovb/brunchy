@@ -11,14 +11,22 @@
   padding-right: var(--padding-order);
 }
 
-.header-container {
+.header-containerB {
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 
+.header-name {
+  user-select: none;
+  font-family: 'Poppins';
+  font-weight: bold;
+}
+
 .info-text {
   font-family: 'Poppins', sans-serif;
+  padding-top: 3rem;
+  padding-bottom: 2rem;
   font-weight: 700;
   font-size: 64px;
   line-height: 65px;
@@ -26,14 +34,16 @@
 
 .info-secondary-text {
   font-family: 'Poppins';
-  font-size: 16px;
+  font-size: 20px;
+  padding-bottom: 2rem;
   font-weight: 400;
   color: #000000;
 }
 
-.container {
+.containerB {
   margin: 0rem;
-  padding-left: 5rem;
+  padding-top: 4rem;
+  padding-left: 7rem;
   padding-right: 6rem;
 }
 
@@ -45,7 +55,7 @@
   justify-content: center;
   padding-left: var(--padding-order);
   padding-right: var(--padding-order);
-  position: fixed;
+  position: absolute;
   left: 50%;
   bottom: 20px;
   transform: translate(-50%, -50%);
@@ -62,7 +72,7 @@
   padding: 1rem;
 }
 
-.items {
+.itemsB {
   display: grid;
   font-family: 'Poppins';
   font-style: normal;
@@ -89,7 +99,7 @@
   height: 25px;
 }
 
-.items > span {
+.itemsB > span {
   color: #797979;
   font-weight: 600;
 }
@@ -100,6 +110,11 @@
 
 .order > img {
   padding: 0rem 3rem 0rem 3rem;
+}
+
+.order p {
+  text-align: center;
+  padding-top: 1rem;
 }
 
 .order > button {
@@ -115,6 +130,14 @@
 
 .order > button:hover {
   background: #d0c8c8;
+}
+
+.order-total {
+  padding: 1rem 0 1rem 0;
+  display: grid;
+  font-family: 'Poppins';
+  font-weight: bold;
+  font-size: 20px;
 }
 
 #order-button {
@@ -157,3 +180,4 @@ a {
 a:visited {
   color: #797979;
 }
+ 
