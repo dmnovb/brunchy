@@ -1,13 +1,14 @@
 :root {
-  --padding-order: 0.450rem;
+  --padding-order: 1rem;
 }
 
-* {
+/* * {
   font-family: 'Poppins';
-}
+} */
 
 #cart-price {
   padding-left: var(--padding-order);
+  padding-right: var(--padding-order);
 }
 
 .header-container {
@@ -18,7 +19,7 @@
 
 .info-text {
   font-family: 'Poppins', sans-serif;
-  font-weight: bold;
+  font-weight: 700;
   font-size: 64px;
   line-height: 65px;
 }
@@ -44,6 +45,15 @@
   justify-content: center;
   padding-left: var(--padding-order);
   padding-right: var(--padding-order);
+  position: fixed;
+  left: 50%;
+  bottom: 20px;
+  transform: translate(-50%, -50%);
+  margin: 0 auto;
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 24px;
 }
 
 .order-container {
@@ -53,45 +63,87 @@
 }
 
 .items {
-  display: flex;
+  display: grid;
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 700;
   background-color: #f9f5f5;
   padding: 3rem;
   text-align: center;
   border-radius: 30px;
+}
 
+.basket-image {
+  width: 15px;
+  height: 15px;
+  position: relative;
+  background: #ffff;
+  border-radius: 7px;
+  padding: 0.75rem;
+  left: 2rem;
+  top: 4rem;
 }
 
 .basket {
-  width: 15px;
-  height: 15px;
+  width: 25px;
+  height: 25px;
 }
 
-li {
-  list-style: none;
-  margin: 0.650rem;
+.items > span {
+  color: #797979;
+  font-weight: 600;
 }
 
 .about > li {
   color: #797979;
 }
 
+.order > img {
+  padding: 0rem 3rem 0rem 3rem;
+}
+
+.order > button {
+  border: none;
+  border-radius: 7px;
+  background: #f9f5f5;
+  cursor: pointer;
+  transition: 0.2s;
+  padding: 0.250rem;
+  margin-left: 2rem;
+  margin-right: 2rem;
+}
+
+.order > button:hover {
+  background: #d0c8c8;
+}
+
+#order-button {
+  padding: 0.750rem;
+  margin-left: 3rem;
+  margin-right: 2rem;
+  font-family: 'Poppins';
+  background: #ff8515;
+  color: white;
+  border-radius: 15px;
+  font-style: normal;
+  border: none;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 30px;
+  cursor: pointer;
+}
+
+#order-button:hover{
+  background: #f57e0f;
+}
+
 ul {
   display: flex;
 }
 
-button {
-  margin: 1rem;
-  border: none;
-  color: white;
-  background: #ff8515;
-  border-radius: 15px;
-  padding: 0.5rem;
-  cursor: pointer;
-  font-weight: bold;
-}
-
-button:hover{
-  background: #f57e0f;
+li {
+  list-style: none;
+  margin: 0.650rem;
 }
 
 span {

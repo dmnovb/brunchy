@@ -5,7 +5,7 @@ import deliveryIcon from '../assets/delivery.png'
 const Header = () => {
   return (
     <div className='header-container'>
-      <h1 className='header-name'>Brunchy</h1>
+      <h1 className='header-name'>BRUNCHY</h1>
       <ul className='about'>
           <li>
             <a href='https://www.dreamshot.bg/'>

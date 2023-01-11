@@ -5,12 +5,12 @@ const Order = () => {
   return (
     <div className='order-container'>
       <div className='order'>
-          <img className='basket' src={basket}></img>
+          <button> <img className='basket' src={basket}></img></button>
           <p id='cart-price'>$0.00</p>
-          <button>Order Now</button>
+          <button id='order-button'>Order Now</button>
       </div>
     </div>
   )
 }
 
-export default Order
+export default Order;
