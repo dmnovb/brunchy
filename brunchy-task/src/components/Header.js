@@ -1,6 +1,7 @@
 import React from 'react'
 import '../App.css';
 import deliveryIcon from '../assets/delivery.png'
+import burger from '../assets/1.png'
 
 const Header = () => {
   return (
@@ -22,7 +23,7 @@ const Header = () => {
           </li>
           <li>
             <img src={deliveryIcon}></img>
-
+            
           </li>
       </ul>
     </div>

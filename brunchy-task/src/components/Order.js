@@ -3,46 +3,57 @@ import basket from '../assets/basket.png'
 import {useState} from 'react'
 
 
-const Order = (props) => {
+const Order = ({cartItems, total, setTotal, setCartItems}) => {
   // console.log(props.setCartItems)
   const handleSubmitOrder = () => {
-    props.setCartItems([])
-    props.setTotal(0)
-   
+ 
+    setCartItems([])
+    setTotal(0)
+    
   } 
   
   return (
     <div className='order-container'>
       <div className='order'>
-          <button type='button' data-toggle="modal" data-target="#exampleModalCenter" ><img className='basket' src={basket}></img></button>
-              <p id='cart-price'>$ {props.total}</p>
-          <button onClick={() => handleSubmitOrder()} id='order-button'>Order Now</button>
+          <button type='button' data-toggle="modal" data-target="#cartModal" ><img className='basket' src={basket}></img></button>
+              <p id='cart-price'>$ {total}</p>
+          <button type='button' data-toggle="modal" data-target="#checkoutModal"  onClick={() => handleSubmitOrder()} id='order-button'>Order Now</button>
       </div>    
       <div>
-        <div className="modal fade" id="exampleModalCenter" tabIndex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div className="modal fade" id="cartModal" tabIndex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
           <div className="modal-dialog modal-dialog-centered" role="document">
             <div className="modal-content">
               <div className="modal-body">
                 <ul className='cart-items'>
-                  {props.cartItems.map(item => (
+                  {cartItems.map(item => (
                     <div className='items-container'>
                     <p>{item.name}</p>
                     <p className='item-price'> <span>$</span> {item.price}</p>
-                    </div>
-                    
+                    </div>                  
                   ))}
                 </ul>
               </div>
               <div className='modal-footer'>
                 <div className="modal-footer-container">
                   <p className='total-text'>Total</p>
-                  <p id='total'><span>$ </span>{props.total}</p>
+                  <p id='total'><span>$ </span>{total}</p>
                 </div>
               </div>
             </div>
           </div>
         </div>
-      </div>  
+      </div>
+      <div className="modal fade" id="checkoutModal" tabIndex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+          <div className="modal-dialog modal-dialog-centered" role="document">
+            <div className="modal-content">
+              <div className="modal-body">
+                <h1>Congratulations!</h1>
+                <h2>Your order is on it's way.</h2>
+                <button data-dismiss="modal">Ok</button>
+              </div>
+            </div>
+          </div>
+        </div>
     </div>
   )
 }
