@@ -4,22 +4,24 @@ import '@splidejs/splide/dist/css/splide.min.css'
 import {Splide, SplideSlide} from '@splidejs/react-splide'
 import basket from '../assets/basket.png'
 import Order from './Order';
+import bp from '../assets/1.png'
+import ac from '../assets/2.png'
+import sy from '../assets/3.png'
+import pt from '../assets/4.png'
+import ft from '../assets/5.png'
+import bb from '../assets/6.png'
+import cw from '../assets/7.png'
+
 
 const Items = () => {
-
+  const images = [bp, ac, sy, pt, ft, bb, cw]
   const [cartItems, setCartItems] = useState([])
-  const [itemsCount, setItemsCount] = useState(0)
   const [total, setTotal] = useState(0)
 
   const handleItems = (item) => {
     setCartItems([...cartItems, item])
-    // if(item.name === item.name){
-    //   setItemsCount(itemsCount + 1)
-    // }
     setTotal(total + item.price)
   }
-   
-  console.log(itemsCount)
 
   return (
     <div>
@@ -34,21 +36,19 @@ const Items = () => {
             {data.items.map((item, idx) => (
             <SplideSlide style={{display: 'flex'}}>
               <li key={idx} className='itemsB'>
-                  <img src={item.image}/> 
+                  <img className='item-images' src={images[idx]}/> 
                   {item.name} <br></br><span> {item.caption} </span> <br></br> <div>
                   <span className='dollar-sign-span'>$ </span>{item.price}
                   </div>                   
                       <button onClick={() => handleItems(item)}>
                   <img className='basket-image' src={basket}></img>
                   </button>
-                  </li>
-                </SplideSlide>
+              </li>
+            </SplideSlide>
             ))}
           </Splide>
         </ul>
         <Order cartItems={cartItems} total={total} setTotal={setTotal} setCartItems={setCartItems}/> 
-
-       
     </div>
   )
 }

@@ -1,10 +1,9 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import basket from '../assets/basket.png'
-import {useState} from 'react'
+
 
 
 const Order = ({cartItems, total, setTotal, setCartItems}) => {
-  // console.log(props.setCartItems)
   const handleSubmitOrder = () => {
  
     setCartItems([])
@@ -17,7 +16,10 @@ const Order = ({cartItems, total, setTotal, setCartItems}) => {
       <div className='order'>
           <button type='button' data-toggle="modal" data-target="#cartModal" ><img className='basket' src={basket}></img></button>
               <p id='cart-price'>$ {total}</p>
-          <button type='button' data-toggle="modal" data-target="#checkoutModal"  onClick={() => handleSubmitOrder()} id='order-button'>Order Now</button>
+          {cartItems.length >= 1 &&
+          <button type='button' data-toggle="modal" data-target="#checkoutModal" 
+          onClick={() => handleSubmitOrder()} 
+          id='order-button'>Order Now</button> }
       </div>    
       <div>
         <div className="modal fade" id="cartModal" tabIndex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">

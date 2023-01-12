@@ -1,8 +1,7 @@
 import React from 'react'
 import '../App.css';
 import deliveryIcon from '../assets/delivery.png'
-import burger from '../assets/1.png'
-
+ 
 const Header = () => {
   return (
     <div className='header-containerB'>
@@ -18,12 +17,11 @@ const Header = () => {
               Call us
             </a>
           </li>
-          <li>
+          <li id='delivery'>
               Free Delivery
           </li>
           <li>
             <img src={deliveryIcon}></img>
-            
           </li>
       </ul>
     </div>
