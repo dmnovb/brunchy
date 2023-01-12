@@ -2,7 +2,6 @@ import './App.css';
 import Header from './components/Header'
 import Info from './components/Info'
 import Items from './components/Items'
-import Order from './components/Order'
 
 function App() {
   return (
@@ -10,7 +9,6 @@ function App() {
       <Header/>
       <Info/>
       <Items/>
-      {/* <Order/> */}
     </div>
   );
 }

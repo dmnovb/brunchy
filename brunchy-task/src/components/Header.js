@@ -22,6 +22,7 @@ const Header = () => {
           </li>
           <li>
             <img src={deliveryIcon}></img>
+
           </li>
       </ul>
     </div>
