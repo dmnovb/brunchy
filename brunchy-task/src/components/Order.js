@@ -1,3 +1,4 @@
+import { isDisabled } from '@testing-library/user-event/dist/utils'
 import React from 'react'
 import basket from '../assets/basket.png'
 
@@ -12,10 +13,11 @@ const Order = ({cartItems, total, setTotal, setCartItems}) => {
       <div className='order'>
           <button type='button' data-toggle="modal" data-target="#cartModal" ><img className='basket' src={basket}></img></button>
               <p id='cart-price'>$ {total}</p>
-          {cartItems.length >= 1 &&
+          {cartItems.length > 0 && 
           <button type='button' data-toggle="modal" data-target="#checkoutModal" 
           onClick={() => handleSubmitOrder()} 
-          id='order-button'>Order Now</button> }
+          id='order-button' >Order Now</button>}
+          { cartItems.length == 0 && <button type='button' data-toggle="modal" data-target="#checkoutModal" disabled id='disabled-button'>Order Now</button>}
       </div>    
       <div>
         <div className="modal fade" id="cartModal" tabIndex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
