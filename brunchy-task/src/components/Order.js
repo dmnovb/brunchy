@@ -2,15 +2,11 @@ import React from 'react'
 import basket from '../assets/basket.png'
 
 
-
 const Order = ({cartItems, total, setTotal, setCartItems}) => {
   const handleSubmitOrder = () => {
- 
     setCartItems([])
     setTotal(0)
-    
   } 
-  
   return (
     <div className='order-container'>
       <div className='order'>

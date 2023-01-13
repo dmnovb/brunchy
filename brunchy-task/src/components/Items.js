@@ -17,7 +17,6 @@ const Items = () => {
   const images = [bp, ac, sy, pt, ft, bb, cw]
   const [cartItems, setCartItems] = useState([])
   const [total, setTotal] = useState(0)
-
   const handleItems = (item) => {
     setCartItems([...cartItems, item])
     setTotal(total + item.price)
@@ -40,15 +39,16 @@ const Items = () => {
                   {item.name} <br></br><span> {item.caption} </span> <br></br> <div>
                   <span className='dollar-sign-span'>$ </span>{item.price}
                   </div>                   
-                      <button onClick={() => handleItems(item)}>
+                        <button onClick={() => handleItems(item)}>
+                     
                   <img className='basket-image' src={basket}></img>
                   </button>
-              </li>
-            </SplideSlide>
+                  </li>
+                </SplideSlide>
             ))}
           </Splide>
         </ul>
-        <Order cartItems={cartItems} total={total} setTotal={setTotal} setCartItems={setCartItems}/> 
+        <Order cartItems={cartItems} total={total} setTotal={setTotal} setCartItems={setCartItems}/>    
     </div>
   )
 }
